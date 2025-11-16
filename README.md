@@ -36,8 +36,6 @@ USER
 │ │
 [S3 Cloud Storage, Docker, Prometheus/Grafana]
 
-text
-
 ---
 
 ## 📷 Screenshots
@@ -62,16 +60,14 @@ text
 ### Backend
 
 1. Clone + install dependencies
-git clone https://github.com/yourname/leafguard-ai.git
+](https://github.com/sonujaiswal450/LeafGuard-AI.git)
 cd leafguard-ai/backend
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-2. Start backend server
+3. Start backend server
 uvicorn app.main:app --reload
-
-text
 
 ### Frontend
 
@@ -79,7 +75,6 @@ cd ../frontend
 npm install
 npm start
 
-text
 - App now runs at `http://localhost:3000` 🚀
 
 ---
@@ -103,9 +98,6 @@ text
 curl -X POST "http://localhost:8000/api/plants"
 -H "Content-Type: application/json"
 -d '{"name":"Tomato A","species":"Solanum lycopersicum"}'
-
-text
-
 ---
 
 ## 🧪 Model Performance
@@ -143,10 +135,7 @@ leafguard-ai/
 │ │ │ └── ...
 │ └── package.json
 │
-└── README.md
-
-text
-
+└── README.me
 ---
 
 ## 💡 Citing LeafGuard AI
@@ -167,7 +156,7 @@ text
 ## 📬 Contact & Community
 
 Got questions? Want to partner or contribute?
-- Open an [issue](https://github.com/yourname/leafguard-ai/issues)
+- Open an [issue](https://github.com/sonujaiswal450/Leafguard-AI/issues)
 - Email: your.email@example.com
 
 ---

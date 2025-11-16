@@ -1,131 +1,188 @@
-# LeafGuard-AI
-🌿 LeafGuard AI — The Intelligent Plant Doctor
-[
-[
-[
-[
-[
+# 🌱 LeafGuard AI – The Intelligent Plant Doctor
 
-LeafGuard AI empowers anyone—farmer, gardener, or researcher—to diagnose plant health instantly with a photo. Leveraging deep learning and a world-class engineering stack, it delivers expert-grade disease detection, actionable treatments, and smart plant management right from your browser.
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Backend](https://img.shields.io/badge/backend-FastAPI-black?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Model](https://img.shields.io/badge/AI-PyTorch-red?logo=pytorch)](https://pytorch.org/)
+[![Frontend](https://img.shields.io/badge/frontend-React-blue?logo=react)](https://react.dev/)
+[![Status](https://img.shields.io/badge/project-active-brightgreen?logo=github)]
 
-🌱 Features
-Next-Gen Disease Detection: Upload a plant leaf image, receive real-time, AI-powered diagnosis (disease, pest, or nutrient problem) backed by >95% accuracy.
+---
 
-Personalized Care Plans: Each diagnosis includes clear, actionable steps—no jargon, just results you can trust.
+> Self-diagnose plant diseases in seconds, get scientifically backed treatment plans, and take care of your digital garden — all powered by state-of-the-art AI and a scalable cloud-native stack.
 
-Multi-Plant Tracking: Manage your digital garden, monitor plant health over time, and never lose a diagnosis.
+---
 
-Automated Reminders: Get notified about care tasks—watering, nutrient, treatment—at the right moment.
+## 🚀 Live Demo
 
-Treatment Marketplace Integration: Direct links to buy recommended remedies tailored to specific diagnoses.
+[🌿 Try LeafGuard AI online (Live Demo)](https://leafguard-ai-demo.vercel.app)
 
-Expert-Approved Intelligence: Optimized MobileNetV2 engine, transfer learning, and rigorous field-tested pipelines.
+---
 
-Built to Scale: Cloud-ready, containerized, and designed for global impact.
+## ✨ Features
 
-Open Science: Reproducible experiments, open-source code, and transparent methodology.
+- **Photo Diagnosis:** Upload leaf images and get real-time, AI-driven detection of diseases, pests, or nutrient deficiencies.
+- **Actionable Treatment:** Instantly receive recommended remedies and direct links to order necessary products.
+- **Plant Health Timeline:** All diagnoses are saved for easy tracking of your plants’ well-being.
+- **Reminders:** Never forget to water, fertilize, or treat your plants with smart notifications.
+- **Field-ready:** Model achieves 95.8% accuracy, ultra-fast inference (<25 ms/image), and is optimized for deployment on cloud, PC, or edge devices.
+- **Open tech & reproducible science:** Full source code, training logs, and dataset info provided—for both engineers and researchers!
 
-🚀 Quickstart
-bash
-# 1. Clone the repo
+---
+USER
+│
+[React.js Frontend] —— [FastAPI Backend] —— [PyTorch Model (MobileNetV2)]
+│ │ │
+│ [PostgreSQL] [Redis, Celery]
+│ │
+[S3 Cloud Storage, Docker, Prometheus/Grafana]
+
+text
+
+---
+
+## 📷 Screenshots
+
+| Dashboard                  | Diagnosis Result            | Care Planner              |
+|----------------------------|----------------------------|---------------------------|
+| ![Dashboard](demo1.png)    | ![Diagnosis](demo2.png)    | ![CarePlanner](demo3.png) |
+
+---
+
+## 🧩 Tech Stack
+
+- **AI Model:** PyTorch, MobileNetV2, Transfer Learning, PlantVillage dataset
+- **Backend API:** FastAPI, SQLAlchemy, PostgreSQL, Celery (Redis broker)
+- **Frontend:** React.js, TailwindCSS, Axios
+- **Other:** Docker, S3-compatible object storage, Prometheus, Grafana
+
+---
+
+## ⚡ Quick Start
+
+### Backend
+
+1. Clone + install dependencies
 git clone https://github.com/yourname/leafguard-ai.git
-cd leafguard-ai
-
-# 2. Set up the backend (Python 3.8+)
-cd backend
+cd leafguard-ai/backend
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+
+2. Start backend server
 uvicorn app.main:app --reload
 
-# 3. Set up the frontend (Node.js 16+)
+text
+
+### Frontend
+
 cd ../frontend
 npm install
 npm start
 
-# 4. Visit http://localhost:3000 and consult the future of plant health!
-🏗️ Architecture
 text
-User (Web/Mobile)
-         │
-    [React.js Frontend]
-         │
-    [FastAPI Backend] ——— [PyTorch Model: MobileNetV2]
-         │
-    [PostgreSQL Database] (plants, diagnoses, reminders)
-         │
-    [Redis, Celery] (cache & background tasks)
-         │
-Cloud Storage (S3 for images), Deployment: Docker/Kubernetes
-High performance: <30ms average inference.
+- App now runs at `http://localhost:3000` 🚀
 
-Secure: JWT auth, encrypted databases.
+---
 
-Observability: Prometheus, Grafana, Sentry integrated out of the box.
+## 📝 Usage
 
-🧬 Built With
-FastAPI & Uvicorn (backend REST API)
+**Upload a leaf photo**
 
-PyTorch & MobileNetV2 (deep learning inference)
+import requests
 
-PostgreSQL, Redis, Celery (data, cache, async jobs)
+response = requests.post(
+"http://localhost:8000/api/diagnose",
+files={"file": open("myplant.jpg", "rb")}
+)
+print(response.json())
 
-React.js & TailwindCSS (frontend UI)
+text
 
-Docker & Kubernetes (deployment)
+**Create a plant entry**
 
-Prometheus/Grafana (monitoring)
+curl -X POST "http://localhost:8000/api/plants"
+-H "Content-Type: application/json"
+-d '{"name":"Tomato A","species":"Solanum lycopersicum"}'
 
-📊 AI Model
-Architecture: MobileNetV2 (3.5M params, 14 MB, transfer-learned from ImageNet)
+text
 
-Dataset: PlantVillage, 48k+ leaf images, 38+ diseases, 14 plant species
+---
 
-Performance: 95.8% accuracy, 95.3% F1-score, 22ms inference (CPU)
+## 🧪 Model Performance
 
-Explainability: Grad-CAM visualization supported
+- **Model:** MobileNetV2
+- **Accuracy:** 95.8%
+- **Inference Time:** 22 ms/image (CPU)
+- **#Classes:** 38 (across 14 species)
+- **Model Size:** 14 MB
+- **Explainability:** Grad-CAM supported
 
-![MobileNetV2 Block Diagram]
+![Comparative Accuracy Chart](chart.png) <!-- Your actual chart image here -->
 
-🖼️ Screenshots
-📚 System Demo
-Watch our video tour (YouTube):
-LeafGuard AI in Action – 2-Minute Demo
+---
 
-📦 Dataset & Resources
-PlantVillage Dataset (Kaggle)
+## 📑 Project Organization
 
-PyTorch MobileNetV2 Docs
+leafguard-ai/
+│
+├── backend/
+│ ├── app/
+│ │ ├── main.py
+│ │ ├── models.py
+│ │ ├── config.py
+│ │ ├── ml/
+│ │ │ ├── model.py
+│ │ │ └── ...
+│ └── requirements.txt
+│
+├── frontend/
+│ ├── src/
+│ │ ├── App.js
+│ │ ├── components/
+│ │ │ ├── ImageUpload.js
+│ │ │ └── ...
+│ └── package.json
+│
+└── README.md
 
-FastAPI Docs
+text
 
-💡 How You Can Use LeafGuard AI
-Home gardeners: Diagnose your plants, plan next steps, and keep a digital plant journal.
+---
 
-Farmers/agronomists: Early detection to reduce yield loss and pesticide use.
+## 💡 Citing LeafGuard AI
 
-Researchers/educators: Reproducible experiments, API access for science and classroom.
+If you use this project in research, please cite:
 
-Developers: Extend features, contribute new machine learning models, or fork for new crops.
+@software{leafguard_ai_2025,
+author = {Your Name},
+title = {LeafGuard AI: Intelligent Plant Disease Diagnosis},
+url = {https://github.com/yourname/leafguard-ai},
+year = {2025}
+}
 
-🧰 Contributing
-We are open to global collaboration and innovation!
-Read the CONTRIBUTING.md for detailed guidelines.
+text
 
-🌍 Beginner-friendly issues every month
+---
 
-🧪 Submit your own deep learning model
+## 📬 Contact & Community
 
-📝 Improve documentation or translations
+Got questions? Want to partner or contribute?
+- Open an [issue](https://github.com/yourname/leafguard-ai/issues)
+- Email: your.email@example.com
 
-🛡️ License and Credits
-This project is licensed under the MIT License.
-LeafGuard AI owes thanks to the PlantVillage team for open data, the PyTorch/FastAPI/React communities, and every OSS contributor.
+---
 
-📣 Citation
-If you use LeafGuard AI or its research paper in academic work:🌿 LeafGuard AI — The Intelligent Plant Doctor
-[
-[
-[
-[
-[
+## 🛡️ License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## 🌍 Vision
+
+**LeafGuard AI is dedicated to empowering farmers, gardeners, and agronomists worldwide with AI-driven plant health solutions for a more food-secure, sustainable future.**
+
+---
+
+## 🏗️ System Overview
+
